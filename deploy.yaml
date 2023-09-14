@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-ordent
 spec:
   replicas: 1
   selector:
@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest
+        image: nginx:mainline-alpine3.18-slim
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: nginx-persistent-storage
+        - name: persistent
           mountPath: /usr/share/nginx/html
       volumes:
-      - name: nginx-persistent-storage
+      - name: persistent
         persistentVolumeClaim:
           claimName: nginx-pvc
