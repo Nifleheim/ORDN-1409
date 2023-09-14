@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmap-nginx
+data:
+  APPLICATION: nginx
+  VERSION: mainline-alpine3.18-slim
