@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-ordent
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-ordent
+        app: nginx
     spec:
       containers:
       - name: nginx
@@ -23,4 +23,4 @@ spec:
       volumes:
       - name: persistent-storage
         persistentVolumeClaim:
-          claimName: pvc-ordent
+          claimName: pvc-nginx
