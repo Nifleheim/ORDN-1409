@@ -17,6 +17,9 @@ spec:
         image: nginx:mainline-alpine3.18-slim
         ports:
         - containerPort: 80
+        envFrom: 
+          - configMapRef: 
+              name: cmap-nginx   
         volumeMounts:
         - name: persistent-storage
           mountPath: /usr/share/nginx/html
